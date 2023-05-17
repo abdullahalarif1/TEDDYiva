@@ -6,6 +6,8 @@ import router from "./Routes/Router/Router.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <div className="md:px-12">
+      <RouterProvider router={router}></RouterProvider>
+    </div>
   </React.StrictMode>
 );
