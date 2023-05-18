@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "src": "https://img.freepik.com/free-photo/teddy-bears-couple-with-red-heart-gift-white_155003-17148.jpg?size=626&ext=jpg&ga=GA1.1.675751479.1660202141&semt=ais",
+    "alt": "Funskool Teddy Brown",
+    "price": "193.12"
+  },
+  {
+    "id": 2,
+    "src": "https://img.freepik.com/free-photo/one-teddy-bear-hugs-another_144627-15245.jpg?size=626&ext=jpg&ga=GA1.1.675751479.1660202141&semt=ais",
+    "alt": "Funskool Teddy wool",
+    "price": "140.12"
+  },
+  {
+    "id": 3,
+    "src": "https://img.freepik.com/premium-vector/bear-toy-fashion-style-stage-lighting-illustration_241806-285.jpg?size=626&ext=jpg&ga=GA1.1.675751479.1660202141&semt=ais",
+    "alt": "Funskool Teddy Boy",
+    "price": "190.12"
+
+  },
+  {
+    "id": 3,
+    "src": "https://img.freepik.com/free-photo/teddy-bear-sits-ball-yarn_1340-36158.jpg?size=626&ext=jpg&ga=GA1.1.675751479.1660202141&semt=ais",
+    "alt": "Funskool Teddy Girl",
+    "price": "130.12"
+  },
+  {
+    "id": 3,
+    "src": "https://images.unsplash.com/photo-1621311628158-9f9d5b4c2239?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+    "alt": "Funskool Teddy Sad",
+    "price": "190"
+  },
+  {
+    "id": 3,
+    "src": "https://images.unsplash.com/photo-1615583452853-a4e45d4f68b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fHRlZGR5JTIwYmVhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
+    "alt": "Funskool Teddy",
+    "price": "150.12"
+  }
+]

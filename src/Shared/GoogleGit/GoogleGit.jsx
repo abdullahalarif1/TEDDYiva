@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Routes/Provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const GoogleGit = () => {
   const { googleSignIn, githubSignIn } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   // handle google sign in
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -24,6 +25,7 @@ const GoogleGit = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/");
       })
       .catch((error) => {
         const errorMessage = error.message;

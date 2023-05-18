@@ -1,7 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo/logo-removebg-preview.png";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Routes/Provider/AuthProvider";
 
 const Header = () => {
+  const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then((result) => {
+        navigate("/login");
+      })
+      .catch((error) => console.error(error));
+  };
+
   const items = (
     <>
       <li>
@@ -10,17 +24,25 @@ const Header = () => {
       <li>
         <Link to="/allToys">All Toys</Link>
       </li>
-      <li>
-        <Link to="/myToys">My toys</Link>
-      </li>
-      <li>
-        <Link to="/addToys">Add A toys</Link>
-      </li>
+      {user && (
+        <>
+          <li>
+            <Link to="/myToys">My toys</Link>
+          </li>
+          <li>
+            <Link to="/addToys">Add A toys</Link>
+          </li>
+        </>
+      )}
       <li>
         <Link to="/blog">Blog</Link>
       </li>
       <li>
-        <Link to="/login">Login</Link>
+        {user ? (
+          <Link onClick={handleLogout}>Logout</Link>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
     </>
   );
@@ -54,18 +76,33 @@ const Header = () => {
           </ul>
         </div>
         <Link to={"/"}>
-          <img className="h-16" src={logo} alt="" />
+          <img className="md:h-16" src={logo} alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal  px-1">{items}</ul>
       </div>
       <div className="navbar-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-          <div className="w-20 border rounded-full">
-            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </label>
+        {user ? (
+          <>
+            {isHovered && <span>{user.displayName}</span>}
+            <label
+              tabIndex={0}
+              className="btn ms-3 btn-ghost btn-circle avatar"
+            >
+              <div
+                className="w-20  border rounded-full"
+                onMouseEnter={() => setIsHovered(true)}
+              >
+                <img src={user.photoURL} />
+              </div>
+            </label>
+          </>
+        ) : (
+          <Link to="/login" className="btn btn-outline btn-primary">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
