@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <Header></Header>
-      <div className="h-[100vh]">
-        <Outlet></Outlet>
-      </div>
+
+      <Outlet></Outlet>
+
       <Footer></Footer>
     </>
   );
