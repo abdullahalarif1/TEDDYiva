@@ -13,7 +13,7 @@ const Gallary = () => {
       <h2 className="text-3xl text-[#c7b1fa] font-mono font-bold mb-6">
         __Gallery__
       </h2>
-      <p className="md:w-1/2 mx-auto font-thin">
+      <p className="md:w-1/2 mx-auto font-thin pb-8">
         <small>
           Preserve your toys and make your child-hood memories last.We know that
           your toys are important tp retain the same character and we can make

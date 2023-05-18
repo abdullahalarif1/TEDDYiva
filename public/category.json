@@ -1,0 +1,58 @@
+{
+  "category": [
+    {
+      "fuzzyTeddy": [
+        {
+          "id": 1,
+          "picture": "https://i.pinimg.com/474x/31/60/54/3160545f6522df0fb98499392ddc8a9c.jpg",
+          "name": "Fuzzy Teddy 1",
+          "price": 19.99,
+          "rating": 4.5
+        },
+        {
+          "id": 2,
+          "picture": "https://i.pinimg.com/474x/45/8a/4c/458a4c02a66e1183ae715d9797008b3a.jpg",
+          "name": "Fuzzy Teddy 2",
+          "price": 14.99,
+          "rating": 3.8
+        }
+      ]
+    },
+    {
+      "HoneypotTeddy": [
+        {
+          "id": 1,
+          "picture": "https://i.pinimg.com/564x/19/57/03/19570388996fcf6f1f46e308415556cd.jpg",
+          "name": "Honeypot Teddy 1",
+          "price": 19.99,
+          "rating": 4.5
+        },
+        {
+          "id": 2,
+          "picture": "https://i.pinimg.com/474x/ff/59/3f/ff593ff96d014a26fa3a2b7ed0534696.jpg",
+          "name": "Honeypot Teddy 2",
+          "price": 14.99,
+          "rating": 3.8
+        }
+      ]
+    },
+    {
+      "FunskoolTeddy": [
+        {
+          "id": 1,
+          "picture": "https://images.pexels.com/photos/105530/pexels-photo-105530.jpeg?cs=srgb&dl=pexels-marina-shatskikh-105530.jpg&fm=jpg",
+          "name": "Funskool Teddy 1",
+          "price": 19.99,
+          "rating": 4.5
+        },
+        {
+          "id": 2,
+          "picture": "https://images.pexels.com/photos/1264919/pexels-photo-1264919.jpeg?auto=compress&cs=tinysrgb&w=600",
+          "name": "Funskool Teddy 2",
+          "price": 14.99,
+          "rating": 3.8
+        }
+      ]
+    }
+  ]
+}
