@@ -1,23 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../Routes/Provider/AuthProvider";
 
 const AddToy = () => {
-  const [pictureUrl, setPictureUrl] = useState("");
-  const [name, setName] = useState("");
-  const [sellerName, setSellerName] = useState("");
-  const [sellerEmail, setSellerEmail] = useState("");
-  const [subCategory, setSubCategory] = useState("");
-  const [price, setPrice] = useState("");
-  const [rating, setRating] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [description, setDescription] = useState("");
+  const { user } = useContext(AuthContext);
+  console.log(user);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const pictureUrl = e.target.pictureUrl.value;
+    const email = user?.email;
+    const sellerName = e.target.sellerName.value;
+    const subCategory = e.target.subCategory.value;
+    const price = e.target.price.value;
+    const rating = e.target.rating.value;
+    const quantity = e.target.quantity.value;
+    const description = e.target.description.value;
+
     const users = {
       pictureUrl,
       name,
       sellerName,
-      sellerEmail,
+      email,
       subCategory,
       price,
       rating,
@@ -25,18 +30,9 @@ const AddToy = () => {
       description,
     };
     console.log(users);
-    e.preventDefault();
-    setPictureUrl("");
-    setName("");
-    setSellerName("");
-    setSellerEmail("");
-    setSubCategory("");
-    setPrice("");
-    setRating("");
-    setQuantity("");
-    setDescription("");
+
     // post
-    fetch("http://localhost:5000/users", {
+    fetch("http://localhost:5000/myToys", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -48,6 +44,7 @@ const AddToy = () => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire("Good job!", "You inserted data successfully!", "success");
+          e.target.reset();
         }
       });
   };
@@ -58,7 +55,8 @@ const AddToy = () => {
         onSubmit={handleSubmit}
         className=" hero-content flex-col w-[80%] md:w-[50%] justify-center "
       >
-        <div className="card flex-shrink-0 w-full  shadow-2xl bg-base-100">
+        <h1 className="text-3xl font-mono text-indigo-300 py-3">Add A Toy</h1>
+        <div className="card flex-shrink-0 w-full border-2 bg-base-100">
           <div className="card-body">
             <div className="form-control">
               <label className="label">Picture URL of the toy:</label>{" "}
@@ -66,8 +64,7 @@ const AddToy = () => {
                 type="text"
                 className="input input-bordered"
                 placeholder="Photo url"
-                value={pictureUrl}
-                onChange={(e) => setPictureUrl(e.target.value)}
+                name="pictureUrl"
                 required
               />
             </div>
@@ -76,45 +73,42 @@ const AddToy = () => {
               <input
                 placeholder="Name"
                 type="text"
-                value={name}
+                name="name"
                 className="input input-bordered"
-                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">Seller Name:</label>{" "}
               <input
-                type="name"
-                value={sellerName}
+                type="sellerName"
                 className="input input-bordered"
                 placeholder="Seller Name"
-                onChange={(e) => setSellerName(e.target.value)}
+                name="sellerName"
+                defaultValue={user?.displayName}
               />
             </div>
             <div className="form-control">
               <label className="label">Seller Email:</label>
               <input
                 type="email"
+                defaultValue={user?.email}
                 name="email"
-                value={sellerEmail}
+                placeholder="Seller Email"
                 className="input input-bordered"
-                placeholder="Seller email"
-                onChange={(e) => setSellerEmail(e.target.value)}
               />
             </div>
             <div className="form-control">
               {" "}
               <label className="label">Sub-category:</label>
               <select
-                value={subCategory}
+                name="subCategory"
                 className="input input-bordered"
-                onChange={(e) => setSubCategory(e.target.value)}
                 required
               >
                 <option value="">Select Sub-category</option>
-                <option value="Math Toys">Fuzzy Teddy Bear</option>
-                <option value="Language Toys">Honeypot Teddy Bear</option>
+                <option value="Fuzzy Teddy Bear">Fuzzy Teddy Bear</option>
+                <option value="Honeypot Teddy Bear">Honeypot Teddy Bear</option>
                 <option value="Science Toys">Funskool Teddy Bear</option>
               </select>
             </div>
@@ -125,8 +119,7 @@ const AddToy = () => {
                 type="number"
                 className="input input-bordered"
                 placeholder="Price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                name="price"
                 required
               />
             </div>
@@ -136,10 +129,9 @@ const AddToy = () => {
               <label className="label">Rating:</label>
               <input
                 type="number"
-                value={rating}
                 className="input input-bordered"
                 placeholder="Rating"
-                onChange={(e) => setRating(e.target.value)}
+                name="rating"
               />
             </div>
 
@@ -147,10 +139,9 @@ const AddToy = () => {
               <label className="label">Available Quantity:</label>
               <input
                 type="number"
-                value={quantity}
                 className="input input-bordered"
                 placeholder="Quality"
-                onChange={(e) => setQuantity(e.target.value)}
+                name="quantity"
                 required
               />
             </div>
@@ -158,10 +149,9 @@ const AddToy = () => {
             <div className="form-control">
               <label className="label">Detail Description:</label>
               <textarea
-                value={description}
+                name="description"
                 className="input input-bordered "
                 placeholder="Description"
-                onChange={(e) => setDescription(e.target.value)}
                 required
               />
             </div>

@@ -5,6 +5,11 @@ import ErrorPage from "../../Error/ErrorPage";
 import Login from "../../Shared/Login/Login";
 import SignUp from "../../Shared/SignUp/SignUp";
 import AddToy from "../../Pages/AddToy/AddToy";
+import AllToys from "../../Pages/AllToys/AllToys";
+import Blog from "../../Pages/Blog/Blog";
+import ShowToy from "../../Pages/AddToy/ShowToy";
+import PrivateRoute from "../PrivateRoute";
+import MyToys from "../../Pages/MyToys/MyToys";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +22,35 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
         path: "/addToys",
         element: <AddToy></AddToy>,
+      },
+      {
+        path: "/myToys",
+        element: (
+          <PrivateRoute>
+            <MyToys></MyToys>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/allToys",
+        element: <AllToys></AllToys>,
+        loader: () => fetch("http://localhost:5000/users"),
+      },
+      {
+        path: "/allToys/:id",
+        element: (
+          <PrivateRoute>
+            <ShowToy></ShowToy>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/users/${params.id}`),
       },
       {
         path: "/login",
