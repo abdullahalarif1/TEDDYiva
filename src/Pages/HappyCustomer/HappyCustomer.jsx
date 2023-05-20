@@ -47,7 +47,10 @@ const HappyCustomerSection = () => {
       <h2 className="text-3xl py-16 text-center text-[#c7b1fa] font-mono font-bold ">
         __Our Happy Customers__
       </h2>
-      <div className="card justify-center gap-4 items-center grid sm:grid-cols-3 pb-10 md:grid-cols-5">
+      <div
+        className="card justify-center gap-4 items-center grid sm:grid-cols-3 pb-10 md:grid-cols-5"
+        data-aos="flip-left"
+      >
         <img
           className="w-52 rounded-3xl p-2 h-82 border-4 border-indigo-300 "
           src={teddyBear.image}

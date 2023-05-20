@@ -6,6 +6,6 @@
 2. Big Big Company are order from here .
 3. company: google, netflix, tesla etc
 
-[Cuisine Qi]()
+[TEDDYiva]()
 
 ()

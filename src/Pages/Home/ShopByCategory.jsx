@@ -28,10 +28,13 @@ const ShopByCategory = () => {
 
   return (
     <>
-      <h2 className="text-3xl py-10 text-center text-[#c7b1fa] font-mono font-bold ">
+      <h2
+        className="text-3xl py-10 text-center text-[#c7b1fa] font-mono font-bold "
+        data-aos="flip-left"
+      >
         __Shop By Category__
       </h2>
-      <div className="w-full md:px-12">
+      <div className="w-full md:px-12" >
         <Tabs className="">
           <TabList className="text-center">
             <Tab>

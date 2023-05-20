@@ -9,7 +9,10 @@ const Gallary = () => {
       .then((data) => setteddys(data));
   }, []);
   return (
-    <div className="container text-center py-10 mx-auto md:px-12">
+    <div
+      className="container text-center py-10 mx-auto md:px-12"
+      data-aos="flip-left"
+    >
       <h2 className="text-3xl text-[#c7b1fa] font-mono font-bold mb-6">
         __Gallery__
       </h2>
@@ -21,7 +24,10 @@ const Gallary = () => {
           love.
         </small>
       </p>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+      <div
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-4  "
+        data-aos="flip-left"
+      >
         {teddys.map((teddy) => (
           <div className="card ">
             <img
