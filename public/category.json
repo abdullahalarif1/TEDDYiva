@@ -1,0 +1,184 @@
+[
+  {
+    "seller": "John Doe",
+    "toyName": "Teddy Name 1",
+    "subCategory": "Fuzzy Teddy Bear",
+    "price": 19.99,
+    "availableQuantity": 5
+  },
+  {
+    "seller": "Jane Smith",
+    "toyName": "Teddy Name 2",
+    "subCategory": "Honeypot Teddy Bear",
+    "price": 29.99,
+    "availableQuantity": 10
+  },
+  {
+    "seller": "Michael Johnson",
+    "toyName": "Teddy Name 3",
+    "subCategory": "Funskool Teddy Bear",
+    "price": 49.99,
+    "availableQuantity": 2
+  },
+  {
+    "seller": "Sarah Williams",
+    "toyName": "Teddy Name 4",
+    "subCategory": "Fuzzy Teddy Bear",
+    "price": 79.99,
+    "availableQuantity": 3
+  },
+  {
+    "seller": "David Brown",
+    "toyName": "Building Blocks Set",
+    "subCategory": "Funskool Teddy Bear",
+    "price": 39.99,
+    "availableQuantity": 8
+  },
+  {
+    "seller": "Emily Wilson",
+    "toyName": "Dollhouse with Furniture",
+    "subCategory": "Honeypot Teddy Bear",
+    "price": 99.99,
+    "availableQuantity": 4
+  },
+  {
+    "seller": "Andrew Davis",
+    "toyName": "Remote Control Robot",
+    "subCategory": "Fuzzy Teddy Bear",
+    "price": 69.99,
+    "availableQuantity": 6
+  },
+  {
+    "seller": "Jessica Rodriguez",
+    "toyName": "Art Set",
+    "subCategory": "Creative Arts",
+    "price": 24.99,
+    "availableQuantity": 12
+  },
+  {
+    "seller": "Brian Thompson",
+    "toyName": "Puzzle Game",
+    "subCategory": "Brain Teasers",
+    "price": 14.99,
+    "availableQuantity": 15
+  },
+  {
+    "seller": "Olivia Davis",
+    "toyName": "Play Kitchen Set",
+    "subCategory": "Honeypot Teddy Bear",
+    "price": 59.99,
+    "availableQuantity": 7
+  },
+  {
+    "seller": "Christopher Moore",
+    "toyName": "RC Drone",
+    "subCategory": "Outdoor Toys",
+    "price": 89.99,
+    "availableQuantity": 3
+  },
+  {
+    "seller": "Sophia Clark",
+    "toyName": "Musical Keyboard",
+    "subCategory": "Musical Instruments",
+    "price": 49.99,
+    "availableQuantity": 9
+  },
+  {
+    "seller": "Matthew Wilson",
+    "toyName": "Artificial Intelligence Robot",
+    "subCategory": "Smart Toys",
+    "price": 119.99,
+    "availableQuantity": 2
+  },
+  {
+    "seller": "Ava Hernandez",
+    "toyName": "Remote Control Car",
+    "subCategory": "Honeypot Teddy Bear",
+    "price": 34.99,
+    "availableQuantity": 10
+  },
+  {
+    "seller": "Daniel Anderson",
+    "toyName": "Magic Kit",
+    "subCategory": "Fuzzy Teddy Bear",
+    "price": 19.99,
+    "availableQuantity": 6
+  },
+  {
+    "seller": "Chloe Thompson",
+    "toyName": "Action Figure Set",
+    "subCategory": "Collectibles",
+    "price": 49.99,
+    "availableQuantity": 5
+  },
+  {
+    "seller": "Noah Walker",
+    "toyName": "Wooden Train Set",
+    "subCategory": "Fuzzy Teddy Bear",
+    "price": 29.99,
+    "availableQuantity": 8
+  },
+  {
+    "seller": "Grace Allen",
+    "toyName": "Sports Ball Set",
+    "subCategory": "Outdoor Toys",
+    "price": 19.99,
+    "availableQuantity": 10
+  },
+  {
+    "seller": "Ethan White",
+    "toyName": "Dress-up Costume Set",
+    "subCategory": "Funskool Teddy Bear",
+    "price": 39.99,
+    "availableQuantity": 4
+  },
+  {
+    "seller": "Lily Rodriguez",
+    "toyName": "Robot Building Kit",
+    "subCategory": "STEM Toys",
+    "price": 59.99,
+    "availableQuantity": 6
+  },
+  {
+    "seller": "Logan Lee",
+    "toyName": "Dinosaur Figures Set",
+    "subCategory": "Animals and Creatures",
+    "price": 24.99,
+    "availableQuantity": 12
+  },
+  {
+    "seller": "Victoria Martin",
+    "toyName": "Play Food Set",
+    "subCategory": "Role-Playing Toys",
+    "price": 14.99,
+    "availableQuantity": 15
+  },
+  {
+    "seller": "James Garcia",
+    "toyName": "Building Construction Set",
+    "subCategory": "Creative Building",
+    "price": 79.99,
+    "availableQuantity": 5
+  },
+  {
+    "seller": "Mia Hernandez",
+    "toyName": "Science Experiment Kit",
+    "subCategory": "Educational Toys",
+    "price": 49.99,
+    "availableQuantity": 10
+  },
+  {
+    "seller": "Benjamin Johnson",
+    "toyName": "Tea Party Set",
+    "subCategory": "Pretend Play",
+    "price": 19.99,
+    "availableQuantity": 8
+  },
+  {
+    "seller": "Emma Anderson",
+    "toyName": "Fuzzy Teddy Bear",
+    "subCategory": "Collectibles",
+    "price": 9.99,
+    "availableQuantity": 20
+  }
+]

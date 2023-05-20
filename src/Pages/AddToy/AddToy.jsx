@@ -10,7 +10,7 @@ const AddToy = () => {
     e.preventDefault();
     const name = e.target.name.value;
     const pictureUrl = e.target.pictureUrl.value;
-    const email = user?.email;
+    const email = e.target.email.value;
     const sellerName = e.target.sellerName.value;
     const subCategory = e.target.subCategory.value;
     const price = e.target.price.value;
@@ -44,7 +44,7 @@ const AddToy = () => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire("Good job!", "You inserted data successfully!", "success");
-          // e.target.reset();
+          e.target.reset();
         }
       });
   };
@@ -72,7 +72,7 @@ const AddToy = () => {
               <label className="label">Name:</label>
               <input
                 placeholder="Name"
-                type="text"
+                type="name"
                 name="name"
                 className="input input-bordered"
                 required
@@ -81,7 +81,7 @@ const AddToy = () => {
             <div className="form-control">
               <label className="label">Seller Name:</label>{" "}
               <input
-                type="sellerName"
+                type="name"
                 className="input input-bordered"
                 placeholder="Seller Name"
                 name="sellerName"

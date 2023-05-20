@@ -17,7 +17,7 @@ const AllToys = () => {
 
   return (
     <div className="overflow-x-auto md:px-12">
-      <div className="flex justify-center">
+      <div className="flex justify-center ">
         <div className="form-control my-10 ">
           <div className="input-group">
             <input

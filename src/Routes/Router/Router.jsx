@@ -11,6 +11,8 @@ import ShowToy from "../../Pages/AddToy/ShowToy";
 import PrivateRoute from "../PrivateRoute";
 import MyToys from "../../Pages/MyToys/MyToys";
 import Edit from "../../Pages/Edit/Edit";
+import SubDetail from "../../Pages/Home/SubDetail";
+import TrendingSection from "../../Pages/Trending/TrendingSection";
 
 const router = createBrowserRouter([
   {
@@ -27,8 +29,20 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
+        path: "/trending",
+        element: <TrendingSection></TrendingSection>,
+      },
+      {
         path: "/addToys",
         element: <AddToy></AddToy>,
+      },
+      {
+        path: "/detail/:id",
+        element: (
+          <PrivateRoute>
+            <SubDetail></SubDetail>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/edit/:id",
@@ -47,7 +61,7 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/users"),
+        loader: () => fetch("http://localhost:5000/myToys"),
       },
       {
         path: "/allToys/:id",
@@ -57,7 +71,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/users/${params.id}`),
+          fetch(`http://localhost:5000/myToys/${params.id}`),
       },
       {
         path: "/login",

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -49,10 +50,12 @@ const ShopByCategory = () => {
                       </h1>
                       <p>${fuzzy.price}</p>
                       <p>Ratings: {fuzzy.rating}</p>
-                      <button className="btn mt-3 btn-outline btn-primary">
-                        {" "}
-                        View details
-                      </button>
+                      <Link to={`/detail/${fuzzy.rating}`}>
+                        <button className="btn mt-3 btn-outline btn-primary">
+                          {" "}
+                          View details
+                        </button>
+                      </Link>
                     </div>
                   ))}
                 </>
@@ -74,10 +77,12 @@ const ShopByCategory = () => {
                       </h1>
                       <p>${honey.price}</p>
                       <p>Ratings: {honey.rating}</p>
-                      <button className="btn mt-3 btn-outline btn-primary">
-                        {" "}
-                        View details
-                      </button>
+                      <Link to={`/detail/${honey.rating}`}>
+                        <button className="btn mt-3 btn-outline btn-primary">
+                          {" "}
+                          View details
+                        </button>
+                      </Link>
                     </div>
                   ))}
                 </>
@@ -99,10 +104,12 @@ const ShopByCategory = () => {
                       </h1>
                       <p>${honey.price}</p>
                       <p>Ratings: {honey.rating}</p>
-                      <button className="btn mt-3 btn-outline btn-primary">
-                        {" "}
-                        View details
-                      </button>
+                      <Link to={`/detail/${honey.rating}`}>
+                        <button className="btn mt-3 btn-outline btn-primary">
+                          {" "}
+                          View details
+                        </button>
+                      </Link>
                     </div>
                   ))}
                 </>
