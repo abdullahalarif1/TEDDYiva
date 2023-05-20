@@ -1,18 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-import { AuthContext } from "../../Routes/Provider/AuthProvider";
 
 const AllToys = () => {
   const userData = useLoaderData();
-  const { user } = useContext(AuthContext);
+  const [toy, setToy] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/myToys")
+      .then((res) => res.json())
+      .then((data) => setToy(data));
+  }, []);
 
   const handleSearch = () => {
     fetch(`http://localhost:5000/toySearchBySeller/${searchText}`)
       .then((res) => res.json())
-      .then((data) => {
-        setSearchText(data);
-      });
+      .then((data) => setToy(data));
   };
 
   return (
@@ -60,7 +63,7 @@ const AllToys = () => {
           </tr>
         </thead>
         <tbody>
-          {userData.map((toy, index) => (
+          {toy.map((toy, index) => (
             <tr key={toy._id}>
               <th>{index + 1}</th>
               <td>{toy.sellerName}</td>
