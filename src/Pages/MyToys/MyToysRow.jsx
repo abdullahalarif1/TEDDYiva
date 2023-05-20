@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyToysRow = ({ toys, setMyToys, myToys }) => {
@@ -31,6 +32,9 @@ const MyToysRow = ({ toys, setMyToys, myToys }) => {
       }
     });
   };
+
+  const handleUpdate = () => {};
+
   return (
     <tr>
       <th>
@@ -70,7 +74,14 @@ const MyToysRow = ({ toys, setMyToys, myToys }) => {
       <td>{quantity}</td>
       <td>{rating}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">details</button>
+        <Link to={`/edit/${_id}`}>
+          <button
+            onClick={() => handleUpdate(_id)}
+            className="btn btn-primary btn-outline btn-xs"
+          >
+            Update
+          </button>
+        </Link>
       </th>
     </tr>
   );

@@ -44,7 +44,7 @@ const AddToy = () => {
         console.log(data);
         if (data.insertedId) {
           Swal.fire("Good job!", "You inserted data successfully!", "success");
-          e.target.reset();
+          // e.target.reset();
         }
       });
   };
@@ -109,7 +109,7 @@ const AddToy = () => {
                 <option value="">Select Sub-category</option>
                 <option value="Fuzzy Teddy Bear">Fuzzy Teddy Bear</option>
                 <option value="Honeypot Teddy Bear">Honeypot Teddy Bear</option>
-                <option value="Science Toys">Funskool Teddy Bear</option>
+                <option value="Funskool Teddy Bear">Funskool Teddy Bear</option>
               </select>
             </div>
             <div className="form-control">
