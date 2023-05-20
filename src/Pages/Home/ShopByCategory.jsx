@@ -1,16 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Routes/Provider/AuthProvider";
 
 const ShopByCategory = () => {
+  const { user } = useContext(AuthContext);
   const [category, setCategory] = useState([]);
   useEffect(() => {
     fetch("http://localhost:5000/category")
       .then((res) => res.json())
       .then((data) => setCategory(data[0].category));
   }, []);
+
+  const handleToast = () => {
+    if (!user.email) {
+      Swal.fire({
+        title: "You have to log in first to view details",
+        text: "Do you want to continue",
+        icon: "warning",
+        confirmButtonText: "continue",
+      });
+    }
+  };
+
   return (
     <>
       <h2 className="text-3xl py-10 text-center text-[#c7b1fa] font-mono font-bold ">
@@ -51,7 +66,10 @@ const ShopByCategory = () => {
                       <p>${fuzzy.price}</p>
                       <p>Ratings: {fuzzy.rating}</p>
                       <Link to={`/detail/${fuzzy.rating}`}>
-                        <button className="btn mt-3 btn-outline btn-primary">
+                        <button
+                          onClick={handleToast}
+                          className="btn mt-3 btn-outline btn-primary"
+                        >
                           {" "}
                           View details
                         </button>
