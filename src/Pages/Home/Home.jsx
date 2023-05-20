@@ -1,3 +1,4 @@
+import HappyCustomerSection from "../HappyCustomer/HappyCustomer";
 import Trending from "../Trending/TrendingSection";
 import Banner from "./Banner";
 import Gallary from "./Gallary";
@@ -10,6 +11,7 @@ const Home = () => {
       <Gallary></Gallary>
       <ShopByCategory></ShopByCategory>
       <Trending></Trending>
+      <HappyCustomerSection></HappyCustomerSection>
     </div>
   );
 };
