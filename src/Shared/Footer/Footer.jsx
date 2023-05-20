@@ -3,7 +3,7 @@ import logo from "../../assets/logo/logo-removebg-preview.png";
 
 const Footer = () => {
   return (
-    <footer className="footer p-12 bg-base-200 text-base-content">
+    <footer className="footer p-12 bg-base-200 mt-20 text-base-content">
       <div>
         <Link to={"/"}>
           <img className="h-16" src={logo} alt="" />
@@ -15,18 +15,21 @@ const Footer = () => {
           Providing reliable tech since 1992
         </p>
       </div>
-      <div>
-        <span className="footer-title">Services</span>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </div>
+
       <div>
         <span className="footer-title">Company</span>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
+        <Link to="/blog" className="link link-hover">
+          Blog
+        </Link>
+        <Link
+          to="https://www.facebook.com/shaehkhokkho.poth/"
+          className="link link-hover"
+        >
+          Contact
+        </Link>
+        <Link to="/allToys" className="link link-hover">
+          Toys
+        </Link>
         <a className="link link-hover">Press kit</a>
       </div>
       <div>
