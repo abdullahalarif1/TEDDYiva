@@ -4,9 +4,11 @@ import GoogleGit from "../GoogleGit/GoogleGit";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Routes/Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../UseTitle/UseTitle";
 
 
 const Login = () => {
+  useTitle("Login");
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");

@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Routes/Provider/AuthProvider";
 import MyToysRow from "./MyToysRow";
+import useTitle from "../../Shared/UseTitle/UseTitle";
 
 const MyToys = () => {
+  useTitle("My Toys");
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 

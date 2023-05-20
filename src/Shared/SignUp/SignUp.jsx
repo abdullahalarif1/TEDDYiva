@@ -5,10 +5,11 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Routes/Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import Swal from "sweetalert2";
+import useTitle from "../UseTitle/UseTitle";
 
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
-
+  useTitle("Sign Up");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -34,12 +35,12 @@ const SignUp = () => {
       .then((result) => {
         const createdUser = result.user;
         console.log(createdUser);
-         Swal.fire({
-           title: "Successfully Created",
-           text: "Do you want to continue",
-           icon: "success",
-           confirmButtonText: "Cool",
-         });
+        Swal.fire({
+          title: "Successfully Created",
+          text: "Do you want to continue",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
         setSuccess("user created successfully!!");
         e.target.reset();
 
