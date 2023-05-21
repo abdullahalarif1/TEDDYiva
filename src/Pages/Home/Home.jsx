@@ -3,7 +3,8 @@ import HappyCustomerSection from "../HappyCustomer/HappyCustomer";
 import Trending from "../Trending/TrendingSection";
 import Banner from "./Banner";
 import Gallary from "./Gallary";
-import ShopByCategory from "../Home/ShopByCategory";
+import SubCategory from "./SubCategory";
+;
 
 import SubCtegory2 from "./SubCtegory2";
 
@@ -14,6 +15,7 @@ const Home = () => {
       <Banner></Banner>
       <Gallary></Gallary>
       <SubCtegory2></SubCtegory2>
+      <SubCategory></SubCategory>
       <Trending></Trending>
       {/* <ShopByCategory></ShopByCategory> */}
       <HappyCustomerSection></HappyCustomerSection>

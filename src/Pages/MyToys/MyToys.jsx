@@ -2,15 +2,17 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Routes/Provider/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import useTitle from "../../Shared/UseTitle/UseTitle";
-import { Dropdown } from "react-bootstrap";
-import { FaBeer, FaArrowCircleDown } from "react-icons/fa";
-
-const options = [{ value: "price-Ascending" }, { value: "Price-Descending" }];
 
 const MyToys = () => {
+  useTitle("My Toys");
+  const { user } = useContext(AuthContext);
+  const [myToys, setMyToys] = useState([]);
+
   const handleSortAscending = async () => {
     try {
-      const res = await fetch("http://localhost:5000/myToys?order=ascending");
+      const res = await fetch(
+        `https://toy-marketplace-server-brown-two.vercel.app/myToys?${user.email}&order=ascending`
+      );
       const data = await res.json();
       setMyToys(data);
     } catch (error) {
@@ -20,7 +22,9 @@ const MyToys = () => {
 
   const handleSortDescending = async () => {
     try {
-      const res = await fetch("http://localhost:5000/myToys?order=descending");
+      const res = await fetch(
+        `https://toy-marketplace-server-brown-two.vercel.app/myToys?${user.email}&order=descending`
+      );
       const data = await res.json();
       setMyToys(data);
     } catch (error) {
@@ -28,11 +32,7 @@ const MyToys = () => {
     }
   };
 
-  useTitle("My Toys");
-  const { user } = useContext(AuthContext);
-  const [myToys, setMyToys] = useState([]);
-
-  const url = `http://localhost:5000/myToys?email=${user?.email}`;
+  const url = `https://toy-marketplace-server-brown-two.vercel.app/myToys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())

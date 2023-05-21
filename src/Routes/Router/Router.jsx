@@ -47,8 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/edit/:id",
         element: <Edit></Edit>,
-        // loader: ({ params }) =>
-        //   fetch(`http://localhost:5000/myToys/${params.id}`),
+        loader: ({ params }) =>
+          fetch(
+            `https://toy-marketplace-server-brown-two.vercel.app/myToys/${params.id}`
+          ),
       },
       {
         path: "/myToys",
@@ -61,7 +63,8 @@ const router = createBrowserRouter([
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: () => fetch("http://localhost:5000/myToys"),
+        loader: () =>
+          fetch("https://toy-marketplace-server-brown-two.vercel.app/myToys"),
       },
       {
         path: "/allToys/:id",
@@ -71,7 +74,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myToys/${params.id}`),
+          fetch(
+            `https://toy-marketplace-server-brown-two.vercel.app/myToys/${params.id}`
+          ),
       },
       {
         path: "/login",

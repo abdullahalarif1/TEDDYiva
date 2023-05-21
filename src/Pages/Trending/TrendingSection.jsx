@@ -5,7 +5,7 @@ const Trending = () => {
 
   useEffect(() => {
     // Fetch trending teddy toys from the backend API
-    fetch("http://localhost:5000/trending")
+    fetch("https://toy-marketplace-server-brown-two.vercel.app/trending")
       .then((response) => response.json())
       .then((data) => setTrendingToys(data));
   }, []);

@@ -1,14 +1,11 @@
-import { data } from "autoprefixer";
 import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Edit = () => {
-  // const users = useLoaderData();
-  //   console.log(users);
+  const users = useLoaderData();
+  console.log(users);
 
-  const { id } = useParams();
-  console.log(id);
   // Price, available quantity, Detail description)
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -20,13 +17,16 @@ const Edit = () => {
     console.log(newMyToys);
 
     // update
-    fetch(`http://localhost:5000/myToys/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newMyToys),
-    })
+    fetch(
+      `https://toy-marketplace-server-brown-two.vercel.app/myToys/${users._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newMyToys),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -51,13 +51,14 @@ const Edit = () => {
         <h2 className="text-center text-[#c7b1fa] font-mono font-semibold py-5 text-2xl">
           Update My Toy
         </h2>
-          
+
         <form
           onSubmit={handleUpdate}
           className="flex flex-col space-y-5 justify-center items-center "
         >
           <input
             type="name"
+            defaultValue={users?.name}
             required
             name="name"
             placeholder="Update Name"
@@ -66,6 +67,7 @@ const Edit = () => {
           <input
             type="number"
             name="price"
+            defaultValue={users?.price}
             placeholder="Update Price"
             required
             className="input input-bordered  w-full max-w-xs"
@@ -74,12 +76,14 @@ const Edit = () => {
             type="number"
             name="quantity"
             required
+            defaultValue={users?.quantity}
             placeholder="Update Quantity"
             className="input input-bordered  w-full max-w-xs"
           />
           <input
             type="text"
             name="description"
+            defaultValue={users?.description}
             required
             placeholder="Update Description"
             className="input input-bordered w-full max-w-xs"

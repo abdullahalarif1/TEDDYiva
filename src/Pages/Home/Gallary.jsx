@@ -29,9 +29,8 @@ const Gallary = () => {
         data-aos="flip-left"
       >
         {teddys.map((teddy) => (
-          <div className="card ">
+          <div key={teddy.id} className="card ">
             <img
-              key={teddy.id}
               src={teddy.src}
               alt={teddy.alt}
               className="w-full h-full object-cover rounded-md"

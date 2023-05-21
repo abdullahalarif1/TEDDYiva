@@ -6,7 +6,7 @@ const SubDetail = () => {
   console.log(id);
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/myToys/${id}`)
+    fetch(`https://toy-marketplace-server-brown-two.vercel.app/myToys/${id}`)
       .then((res) => res.json())
       .then((data) => setCategory(data));
   }, []);

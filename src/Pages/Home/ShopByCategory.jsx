@@ -10,7 +10,7 @@ const ShopByCategory = () => {
   const { user } = useContext(AuthContext);
   const [category, setCategory] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/category")
+    fetch("https://toy-marketplace-server-brown-two.vercel.app/category")
       .then((res) => res.json())
       .then((data) => setCategory(data[0].category));
   }, []);

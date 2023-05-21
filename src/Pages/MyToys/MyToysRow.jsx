@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const MyToysRow = ({ toys, setMyToys, myToys }) => {
   console.log(toys);
-  
+
   const { pictureUrl, price, name, rating, quantity, _id } = toys;
 
   const handleDelete = (id) => {
@@ -19,9 +19,12 @@ const MyToysRow = ({ toys, setMyToys, myToys }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
-        fetch(`http://localhost:5000/myToys/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://toy-marketplace-server-brown-two.vercel.app/myToys/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);

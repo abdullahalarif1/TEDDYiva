@@ -1,29 +1,45 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "../../Shared/UseTitle/UseTitle";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../Routes/Provider/AuthProvider";
 
 const AllToys = () => {
   useTitle("All Toys");
   const userData = useLoaderData();
   const [toy, setToy] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/myToys")
+    fetch("https://toy-marketplace-server-brown-two.vercel.app/myToys")
       .then((res) => res.json())
       .then((data) => setToy(data));
   }, []);
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toySearchBySeller/${searchText}`)
+    fetch(
+      `https://toy-marketplace-server-brown-two.vercel.app/toySearchBySeller/${searchText}`
+    )
       .then((res) => res.json())
       .then((data) => setToy(data));
+  };
+
+  const handleToast = () => {
+    if (!user) {
+      Swal.fire({
+        title: "You have to log in first to view details",
+        text: "Do you want to continue",
+        icon: "warning",
+        confirmButtonText: "continue",
+      });
+    }
   };
 
   return (
     <div className="overflow-x-auto md:px-12">
       <div className="flex justify-center ">
-        <div className="form-control my-10 ">
+        <div className="form-control my-10">
           <div className="input-group">
             <input
               onChange={(e) => setSearchText(e.target.value)}
@@ -74,7 +90,10 @@ const AllToys = () => {
               <td>{toy.price}</td>
               <td>{toy.quantity}</td>
               <Link to={`/allToys/${toy._id}`}>
-                <button className="btn btn-outline btn-primary">
+                <button
+                  onClick={handleToast}
+                  className="btn btn-outline btn-primary"
+                >
                   View Details
                 </button>
               </Link>
