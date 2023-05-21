@@ -15,7 +15,7 @@ const ShowToy = () => {
     rating,
   } = data;
   return (
-    <div className="card  bg-base-100 shadow-xl m-5 md:m-12">
+    <div className="card  bg-base-100 shadow-xl p-5 md:m-12">
       <figure className="px-10 pt-10">
         <img src={pictureUrl} alt="Shoes" className="rounded-xl w-96" />
       </figure>

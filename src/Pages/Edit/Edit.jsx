@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -50,7 +51,7 @@ const Edit = () => {
         <h2 className="text-center text-[#c7b1fa] font-mono font-semibold py-5 text-2xl">
           Update My Toy
         </h2>
-
+          
         <form
           onSubmit={handleUpdate}
           className="flex flex-col space-y-5 justify-center items-center "

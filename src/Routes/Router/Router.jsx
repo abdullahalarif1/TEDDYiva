@@ -12,7 +12,7 @@ import PrivateRoute from "../PrivateRoute";
 import MyToys from "../../Pages/MyToys/MyToys";
 import Edit from "../../Pages/Edit/Edit";
 import SubDetail from "../../Pages/Home/SubDetail";
-import TrendingSection from "../../Pages/Trending/TrendingSection";
+import Trending from "../../Pages/Trending/TrendingSection";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/trending",
-        element: <TrendingSection></TrendingSection>,
+        element: <Trending></Trending>,
       },
       {
         path: "/addToys",

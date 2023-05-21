@@ -34,7 +34,7 @@ const ShopByCategory = () => {
       >
         __Shop By Category__
       </h2>
-      <div className="w-full md:px-12" >
+      <div className="w-full md:px-12">
         <Tabs className="">
           <TabList className="text-center">
             <Tab>
@@ -138,6 +138,27 @@ const ShopByCategory = () => {
             </div>
           </TabPanel>
         </Tabs>
+
+        {/*             <div className="grid md:grid-cols-2 gap-5">
+              {fuzzy.slice(0, 2).map((cat) => (
+                <div key={cat._id} className="border card  p-3 text-center">
+                  <img
+                    className="w-full h-[500px] rounded-xl p-2"
+                    src={cat.pictureUrl}
+                    alt=""
+                  />
+                  <h1 className="text-2xl font-bold text-[#c7b1fa] font-mono py-2">
+                    {cat.name}
+                  </h1>
+                  <p>${cat.price}</p>
+                  <p>Ratings: {cat.rating}</p>
+                  <button className="btn mt-3 btn-outline btn-primary">
+                    {" "}
+                    View details
+                  </button>
+                </div>
+              ))}
+            </div> */}
       </div>
     </>
   );

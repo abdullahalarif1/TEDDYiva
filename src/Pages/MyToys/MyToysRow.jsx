@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 
 const MyToysRow = ({ toys, setMyToys, myToys }) => {
   console.log(toys);
+  
   const { pictureUrl, price, name, rating, quantity, _id } = toys;
 
   const handleDelete = (id) => {
